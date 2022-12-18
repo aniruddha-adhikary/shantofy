@@ -3,6 +3,13 @@
 Shantofy is an Android app that hooks into Android's Notification System and blocks
 promotional notifications. This is designated to work for apps popular in Bangladesh.
 
+# Installation
+
+1. Build the App and sideload onto your Android device.
+2. Give the app Autostart permissions, so it automatically starts when your phone starts.
+3. Turn off Battery Optimisation Features for the app, to make sure it is not killed.
+4. Launch the app, grant it Notification access.
+
 # FAQ
 
 ## Why does it exist?
