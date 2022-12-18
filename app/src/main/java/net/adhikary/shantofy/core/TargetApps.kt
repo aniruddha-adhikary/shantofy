@@ -2,25 +2,25 @@ package net.adhikary.shantofy.core
 
 enum class TargetApps(val packageName: String, val blockChannels: Set<String>? = null) {
     // e-commerce
-    chaldal("com.chaldal.poached"),
-    daraz("com.daraz.android"),
+    Chaldal("com.chaldal.poached"),
+    Daraz("com.daraz.android"),
 
     // ubers
-    uber("com.ubercab", setOf("messages_promo_recommend_channels")),
-    pathao("com.pathao.user"),
-    obhai("com.obhai"),
+    Uber("com.ubercab", setOf("messages_promo_recommend_channels")),
+    Pathao("com.pathao.user"),
+    Obhai("com.obhai"),
 
     // banks
-    easternBankEbl("com.cibl.eblsky"),
-    mutualTrustBank("com.mtb.mobilebanking"),
-    thecitybank("com.thecitybank.citytouch"),
+    EasternBankEBL("com.cibl.eblsky"),
+    MutualTrustBankMTB("com.mtb.mobilebanking"),
+    TheCityBank("com.thecitybank.citytouch"),
 
     // mfs
-    bKash("com.bKash.customerapp"),
-    nagad("com.konasl.nagad", setOf("ANNOUNCEMENT")),
+    Bkash("com.bKash.customerapp"),
+    Nagad("com.konasl.nagad", setOf("ANNOUNCEMENT")),
 
     // telco
-    myGp("com.portonics.mygp");
+    MyGP("com.portonics.mygp");
 
     companion object {
         private val map = TargetApps.values().associateBy { app -> app.packageName }
