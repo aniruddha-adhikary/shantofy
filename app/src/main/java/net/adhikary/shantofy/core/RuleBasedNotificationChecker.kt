@@ -3,9 +3,23 @@ package net.adhikary.shantofy.core
 class RuleBasedNotificationChecker : NotificationChecker {
 
     private val targetAppsProvider: TargetAppsProvider = TargetAppsProviderStatic()
+    private val wordBlackList = listOf(
+        "অফার",  "offer",
+        "ডিসকাউন্ট",  "discount",
+        "ক্যাশব্যাক", "cashback",
+        "free",  "ফ্রী",  "ফ্রি",  "বিনামূল্য",
+        "কুপন", "coupon",
+        "শর্ত", "t&c", "term", "condition",
+        "কূপন", "কুপন", "coupon",
+        "deal", "ডিল",
+        "বিস্তারিত",
+    )
 
-    val contentBlacklist = listOf<Regex>(
-        Regex("(অফার|offer|ডিসকাউন্ট|discount|ক্যাশব্যাক|cashback)", RegexOption.IGNORE_CASE),
+    private val contentBlacklist = listOf(
+        Regex(
+            wordBlackList.joinToString(prefix = "(", separator = "|", postfix = ")"),
+            RegexOption.IGNORE_CASE
+        ),
         Regex("(%|টাকা|tk|taka|শতাংশ)\\s*(off|অফ|ছাড়)", RegexOption.IGNORE_CASE),
     )
 
@@ -37,8 +51,7 @@ class RuleBasedNotificationChecker : NotificationChecker {
         val searchField = (notification.text ?: "") + (notification.title ?: "")
 
         contentBlacklist.forEach { pattern ->
-            if (pattern.containsMatchIn(searchField))
-                return@shouldBlockByContent true
+            if (pattern.containsMatchIn(searchField)) return@shouldBlockByContent true
         }
         return false
     }
