@@ -6,7 +6,7 @@ enum class TargetApps(val packageName: String, val blockChannels: Set<String>? =
     Daraz("com.daraz.android"),
 
     // ubers
-    Uber("com.ubercab", setOf("messages_promo_recommend_channels")),
+    Uber("com.ubercab", setOf("messsages_promo_recommend_channels")),
     Pathao("com.pathao.user"),
     Obhai("com.obhai"),
 
