@@ -3,9 +3,11 @@ package net.adhikary.shantofy
 import android.app.AlertDialog
 import android.content.ComponentName
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.text.TextUtils
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import net.adhikary.shantofy.databinding.ActivityMainBinding
@@ -24,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        findViewById<Button>(R.id.gitHubButton).setOnClickListener { onGitHubButtonClick() }
 
         registerService()
         startService()
@@ -74,5 +78,10 @@ class MainActivity : AppCompatActivity() {
             // the app. will not work as expected
         }
         return alertDialogBuilder.create()
+    }
+
+    fun onGitHubButtonClick() {
+        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("http://github.com/aniruddha-adhikary/shantofy"))
+        startActivity(browserIntent)
     }
 }
