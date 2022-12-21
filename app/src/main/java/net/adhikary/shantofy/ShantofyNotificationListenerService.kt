@@ -75,7 +75,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
         NotificationCompat.Builder(this, getString(R.string.notification_channel_id))
             .setContentTitle(getString(R.string.notification_listener_service))
             .setContentText(getString(R.string.notification_listener_service_content, count))
-            .setSmallIcon(R.mipmap.ic_launcher_round)
+            .setSmallIcon(R.drawable.ic_notification_icon)
 
     private fun incrementCount(): Int {
         val editor: SharedPreferences.Editor =
