@@ -8,10 +8,13 @@ promotional notifications. This is designated to work for apps popular in Bangla
 
 # Installation
 
-1. Build the App and sideload onto your Android device.
-2. Give the app Autostart permissions, so it automatically starts when your phone starts.
-3. Turn off Battery Optimisation Features for the app, to make sure it is not killed.
-4. Launch the app, grant it Notification access.
+1. [Download](https://github.com/aniruddha-adhikary/shantofy/releases) the app, install it.
+2. Ignore the Play Store warnings.
+3. Give the app Autostart permissions, so it automatically starts when your phone starts.
+4. Turn off Battery Optimisation Features for the app, to make sure it is not killed.
+5. Launch the app, grant it Notification access.
+
+3 and 4 will differ from phone to phone, depending on the manufacturer.
 
 # FAQ
 
