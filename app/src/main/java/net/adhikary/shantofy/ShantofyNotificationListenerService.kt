@@ -27,7 +27,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
     }
 
     override fun onListenerConnected() {
-        Log.e(null, "onListenerConnected")
+        updateNotification(getCount())
         super.onListenerConnected()
     }
 
@@ -59,22 +59,26 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
     private fun createNotification(count: Int): Notification {
         val notificationIntent = Intent(this, MainActivity::class.java)
         val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, FLAG_MUTABLE)
-        return buildNotificationContent(count)
+        return buildNotReadyContent()
             .setContentIntent(pendingIntent)
             .build()
     }
 
     private fun updateNotification(count: Int) {
-        val notification = buildNotificationContent(count).build()
+        val notification =
+            NotificationCompat.Builder(this, getString(R.string.notification_channel_id))
+                .setContentTitle(getString(R.string.notification_listener_service))
+                .setContentText(getString(R.string.notification_listener_service_content, count))
+                .setSmallIcon(R.drawable.ic_notification_icon).build()
 
         val mNotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         mNotificationManager.notify(NOTIFICATION_CHANNEL_ID, notification);
     }
 
-    private fun buildNotificationContent(count: Int) =
+    private fun buildNotReadyContent() =
         NotificationCompat.Builder(this, getString(R.string.notification_channel_id))
             .setContentTitle(getString(R.string.notification_listener_service))
-            .setContentText(getString(R.string.notification_listener_service_content, count))
+            .setContentText(getString(R.string.notification_listener_service_not_ready))
             .setSmallIcon(R.drawable.ic_notification_icon)
 
     private fun incrementCount(): Int {
