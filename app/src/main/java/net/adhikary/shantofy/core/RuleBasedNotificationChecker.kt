@@ -13,6 +13,7 @@ class RuleBasedNotificationChecker : NotificationChecker {
         "কূপন", "কুপন", "coupon",
         "deal", "ডিল",
         "বিস্তারিত",
+        "promo", "প্রোমো", "প্রমো",
     )
 
     private val contentBlacklist = listOf(

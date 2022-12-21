@@ -12,7 +12,7 @@
     <string name="service_label">"Shantofy Filtering Service"</string>
     <string name="notification_listener_service">"Shantofy Notification Filter"</string>
     <string name="notification_listener_service_explanation">"For the app to filter notifications, you need to enable the Notification Listener Service. Enable it now?"</string>
-    <string name="notification_listener_service_content">"Shantofy is blocking annoying notifications! So far, %1$d blocked."</string>
+    <string name="notification_listener_service_content">"Blocking annoying notifications! %1$d blocked."</string>
     <string name="notification_listener_service_not_ready">"🚨 Shantofy is not yet blocking annoying notifications. You may need to grant permissions."</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
