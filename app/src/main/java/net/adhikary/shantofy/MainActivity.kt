@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.text.TextUtils
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import net.adhikary.shantofy.databinding.ActivityMainBinding
 
 
@@ -36,8 +37,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startService() {
-        val serviceIntent = Intent(applicationContext, ShantofyNotificationListenerService::class.java)
-        startService(serviceIntent)
+        val intent = Intent(this, ShantofyNotificationListenerService::class.java)
+        ContextCompat.startForegroundService(this, intent)
     }
 
     private fun isNotificationServiceEnabled(): Boolean {
