@@ -7,9 +7,9 @@ class RuleBasedNotificationChecker : NotificationChecker {
     )
 
     override fun shouldBlock(notification: ShantofyNotification): Boolean {
-//        val app = TargetApps.from(notification.sbn.packageName) ?: return false
+        val app = TargetApps.from(notification.sbn.packageName) ?: return false
 
-//        if (shouldBlockByChannel(app.blockChannels, notification)) return true
+        if (shouldBlockByChannel(app.blockChannels, notification)) return true
         if (shouldBlockByNotificationType(notification)) return true
         if (shouldBlockByContent(notification)) return true
 
