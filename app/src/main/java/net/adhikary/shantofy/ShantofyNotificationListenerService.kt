@@ -27,7 +27,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
     }
 
     override fun onListenerConnected() {
-        updateNotification(getCount())
+        Log.e(null, "onListenerConnected")
         super.onListenerConnected()
     }
 
@@ -65,11 +65,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
     }
 
     private fun updateNotification(count: Int) {
-        val notification =
-            NotificationCompat.Builder(this, getString(R.string.notification_channel_id))
-                .setContentTitle(getString(R.string.notification_listener_service))
-                .setContentText(getString(R.string.notification_listener_service_content, count))
-                .setSmallIcon(R.drawable.ic_notification_icon).build()
+        val notification = buildNotificationContent(count).build()
 
         val mNotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         mNotificationManager.notify(NOTIFICATION_CHANNEL_ID, notification);
@@ -81,12 +77,17 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
             .setContentText(getString(R.string.notification_listener_service_not_ready))
             .setSmallIcon(R.drawable.ic_notification_icon)
 
+    private fun buildNotificationContent(count: Int) =
+        NotificationCompat.Builder(this, getString(R.string.notification_channel_id))
+            .setContentTitle(getString(R.string.notification_listener_service))
+            .setContentText(getString(R.string.notification_listener_service_content, count))
+            .setSmallIcon(R.drawable.ic_notification_icon)
+
     private fun incrementCount(): Int {
         val editor: SharedPreferences.Editor =
             getSharedPreferences(getString(R.string.preference_key), MODE_PRIVATE).edit()
         val newCount = getCount() + 1
         editor.putInt(getString(R.string.block_count_key), newCount)
-        Log.d(null, "Setting count $newCount")
         editor.apply()
         return newCount
     }
@@ -94,9 +95,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
     private fun getCount(): Int {
         val prefs: SharedPreferences =
             getSharedPreferences(getString(R.string.preference_key), MODE_PRIVATE)
-        val count = prefs.getInt(getString(R.string.block_count_key), 0)
-        Log.d(null, "Returning count $count")
-        return count
+        return prefs.getInt(getString(R.string.block_count_key), 0)
     }
 
     companion object {
