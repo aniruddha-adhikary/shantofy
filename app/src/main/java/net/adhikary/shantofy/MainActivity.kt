@@ -42,7 +42,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun isNotificationServiceEnabled(): Boolean {
-        val pkgName = packageName
         val flat: String = Settings.Secure.getString(
             contentResolver,
             enabledNotificationListeners
@@ -52,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             for (i in names.indices) {
                 val cn = ComponentName.unflattenFromString(names[i])
                 if (cn != null) {
-                    if (TextUtils.equals(pkgName, cn.packageName)) {
+                    if (TextUtils.equals(packageName, cn.packageName)) {
                         return true
                     }
                 }
