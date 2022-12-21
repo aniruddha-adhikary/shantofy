@@ -36,7 +36,12 @@ enum class TargetApps(val packageName: String, val blockChannels: Set<String>? =
     Airtel("net.omobio.airtelsc"),
     Banglalink("com.arena.banglalinkmela.app"),
     BanglalinkLite("net.banglalink.mybllite"),
-    MyGP("com.portonics.mygp");
+    MyGP("com.portonics.mygp"),
+
+    // food
+    Dominos("com.dominos.bd"),
+    Foodpanda("com.global.foodpanda.android"),
+    KFC("com.aamra.kfc.bd.kfc_bd");
 
     companion object {
         private val map = TargetApps.values().associateBy { app -> app.packageName }
