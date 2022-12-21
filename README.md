@@ -1,5 +1,8 @@
 # shantofy
 
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/aniruddha-adhikary/shantofy)](https://github.com/aniruddha-adhikary/shantofy/releases)
+[![Build APK and Sign](https://github.com/aniruddha-adhikary/shantofy/actions/workflows/build-and-sign.yml/badge.svg)](https://github.com/aniruddha-adhikary/shantofy/actions/workflows/build-and-sign.yml)
+
 Shantofy is an Android app that hooks into Android's Notification System and blocks
 promotional notifications. This is designated to work for apps popular in Bangladesh.
 
