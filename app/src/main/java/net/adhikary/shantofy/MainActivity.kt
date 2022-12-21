@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         registerService()
+        startService()
     }
 
     private fun registerService() {
@@ -32,6 +33,11 @@ class MainActivity : AppCompatActivity() {
             enableNotificationListenerAlertDialog = buildNotificationServiceAlertDialog()
             enableNotificationListenerAlertDialog?.show()
         }
+    }
+
+    private fun startService() {
+        val serviceIntent = Intent(applicationContext, ShantofyNotificationListenerService::class.java)
+        startService(serviceIntent)
     }
 
     private fun isNotificationServiceEnabled(): Boolean {
