@@ -52,7 +52,10 @@ class TargetAppsProviderStatic : TargetAppsProvider {
 
             // food
             TargetApp("com.dominos.bd"),
-            TargetApp("com.global.foodpanda.android"),
+            TargetApp(
+                packageName = "com.global.foodpanda.android",
+                blockChannels = setOf("com.global.foodpanda.android_PROMOTIONS")
+            ),
             TargetApp("com.aamra.kfc.bd.kfc_bd")
         )
 

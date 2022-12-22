@@ -5,13 +5,13 @@ class RuleBasedNotificationChecker : NotificationChecker {
     private val targetAppsProvider: TargetAppsProvider = TargetAppsProviderStatic()
     private val wordBlackList = listOf(
         "অফার",  "offer",
-        "ডিসকাউন্ট",  "discount",
+        "ডিসকাউন্ট",  "discount", "\bছাড়\b",
         "ক্যাশব্যাক", "cashback",
         "free",  "ফ্রী",  "ফ্রি",  "বিনামূল্য",
         "কুপন", "coupon",
         "শর্ত", "t&c", "term", "condition",
         "কূপন", "কুপন", "coupon",
-        "deal", "ডিল",
+        "deal", "ডিল", "বাজিমাত", "exciting",
         "বিস্তারিত",
         "promo", "প্রোমো", "প্রমো",
     )
