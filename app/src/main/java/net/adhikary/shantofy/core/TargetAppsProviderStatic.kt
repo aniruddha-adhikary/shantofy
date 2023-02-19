@@ -49,6 +49,7 @@ class TargetAppsProviderStatic : TargetAppsProvider {
             TargetApp("com.arena.banglalinkmela.app"),
             TargetApp("net.banglalink.mybllite"),
             TargetApp("com.portonics.mygp"),
+            TargetApp("net.omobio.robisc"),
 
             // food
             TargetApp("com.dominos.bd"),
