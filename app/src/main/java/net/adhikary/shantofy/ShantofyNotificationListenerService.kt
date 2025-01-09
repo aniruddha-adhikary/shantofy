@@ -14,7 +14,6 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.text.TextUtils
 import android.util.Log
-import androidx.core.app.NotificationCompat
 import net.adhikary.shantofy.core.RuleBasedNotificationChecker
 import net.adhikary.shantofy.core.ShantofyNotification
 
