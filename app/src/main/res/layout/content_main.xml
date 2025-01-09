@@ -20,19 +20,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_shantofy_logo" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="346dp"
-        android:layout_height="51dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="33dp"
-        android:text="@string/welcome_message"
-        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toTopOf="@+id/gitHubButton">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_message"
+            android:textColor="@android:color/white" />
+
+    </ScrollView>
 
     <TextView
         android:id="@+id/textView2"

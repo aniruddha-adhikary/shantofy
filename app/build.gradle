@@ -5,14 +5,14 @@ plugins {
 
 android {
     namespace 'net.adhikary.shantofy'
-    compileSdk 32
+    compileSdk 35
 
     defaultConfig {
         applicationId "net.adhikary.shantofy"
         minSdk 26
-        targetSdk 32
-        versionCode 14
-        versionName "0.0.14"
+        targetSdk 35
+        versionCode 15
+        versionName '0.0.15'
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

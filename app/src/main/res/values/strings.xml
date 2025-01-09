@@ -22,4 +22,6 @@
     <string name="notification_channel_human">Shantofy Foreground Service</string>
     <string name="welcome_message">Just ensure the Shantofy Notification is up on your Notification Center!</string>
     <string name="credits_message">Created by Ani Adhikary, and contributors</string>
+    <string name="notification_permission_rationale">Shantofy needs notification permission to work properly. Would you like to grant it?</string>
+    <string name="notification_permission_title">Notification Permission Required</string>
 </resources>
