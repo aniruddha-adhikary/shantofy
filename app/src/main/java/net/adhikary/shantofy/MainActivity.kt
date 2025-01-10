@@ -10,15 +10,13 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.text.TextUtils
-import android.widget.Button
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import net.adhikary.shantofy.databinding.ActivityMainBinding
+import net.adhikary.shantofy.ui.MainScreen
 
-class MainActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityMainBinding
+class MainActivity : ComponentActivity() {
     private val enabledNotificationListeners = "enabled_notification_listeners"
     private val ACTION_NOTIFICATION_LISTENER_SETTINGS =
         "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"
@@ -36,10 +34,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
-        findViewById<Button>(R.id.gitHubButton).setOnClickListener { onGitHubButtonClick() }
+        setContent {
+            MainScreen()
+        }
 
         checkNotificationPermission()
     }
