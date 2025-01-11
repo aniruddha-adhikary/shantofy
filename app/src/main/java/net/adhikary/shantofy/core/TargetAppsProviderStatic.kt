@@ -32,6 +32,7 @@ class TargetAppsProviderStatic : TargetAppsProvider {
             TargetApp("com.cibl.tbl"),
             TargetApp("com.sslwireless.nrbmobapp"),
             TargetApp("com.bd.aibl.ibapps"),
+            TargetApp("com.ebl.skybanking"),
 
             // mfs
             TargetApp("com.bKash.customerapp"),

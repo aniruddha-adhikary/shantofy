@@ -1,6 +1,7 @@
 package net.adhikary.shantofy
 
 import android.Manifest
+import android.content.pm.ActivityInfo
 import android.app.AlertDialog
 import android.content.ComponentName
 import android.content.Intent
@@ -33,6 +34,12 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Set portrait orientation
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+
+        // Hide only the action bar
+        actionBar?.hide()
 
         setContent {
             MainScreen()

@@ -87,9 +87,13 @@ fun MainScreen() {
                         context.startActivity(intent)
                     },
                     modifier = Modifier
-                        .padding(horizontal = 158.dp)
+                        .padding(horizontal = 16.dp)
+                        .fillMaxWidth(0.5f)  // Take up 50% of the width
                 ) {
-                    Text(text = "GitHub")
+                    Text(
+                        text = "GitHub",
+                        modifier = Modifier.padding(vertical = 8.dp)
+                    )
                 }
                 Spacer(modifier = Modifier.height(buttonPadding))
 
