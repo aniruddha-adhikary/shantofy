@@ -1,0 +1,103 @@
+{
+  "apps": [
+    {
+      "packageName": "com.chaldal.poached"
+    },
+    {
+      "packageName": "com.daraz.android"
+    },
+    {
+      "packageName": "com.ubercab",
+      "blockChannels": ["messsages_promo_recommend_channels"]
+    },
+    {
+      "packageName": "com.pathao.user"
+    },
+    {
+      "packageName": "com.obhai"
+    },
+    {
+      "packageName": "com.cibl.eblsky"
+    },
+    {
+      "packageName": "com.mtb.mobilebanking"
+    },
+    {
+      "packageName": "com.thecitybank.citytouch"
+    },
+    {
+      "packageName": "com.bracbank.astha"
+    },
+    {
+      "packageName": "com.fsiblbd.fsiblcloud"
+    },
+    {
+      "packageName": "bd.com.primebank.pib.altitudemobile"
+    },
+    {
+      "packageName": "com.gplex.dhakabank"
+    },
+    {
+      "packageName": "bd.com.sonalibank.sonalie_sheba"
+    },
+    {
+      "packageName": "com.bengal.newdigitalbanking"
+    },
+    {
+      "packageName": "com.cibl.tbl"
+    },
+    {
+      "packageName": "com.sslwireless.nrbmobapp"
+    },
+    {
+      "packageName": "com.bd.aibl.ibapps"
+    },
+    {
+      "packageName": "com.ebl.skybanking"
+    },
+    {
+      "packageName": "com.bKash.customerapp"
+    },
+    {
+      "packageName": "com.konasl.nagad",
+      "blockChannels": ["ANNOUNCEMENT"]
+    },
+    {
+      "packageName": "com.dbbl.mbs.apps.main"
+    },
+    {
+      "packageName": "bd.com.upay.customer"
+    },
+    {
+      "packageName": "com.tad.bdkepler"
+    },
+    {
+      "packageName": "teletalk.teletalkcustomerapp"
+    },
+    {
+      "packageName": "net.omobio.airtelsc"
+    },
+    {
+      "packageName": "com.arena.banglalinkmela.app"
+    },
+    {
+      "packageName": "net.banglalink.mybllite"
+    },
+    {
+      "packageName": "com.portonics.mygp"
+    },
+    {
+      "packageName": "net.omobio.robisc"
+    },
+    {
+      "packageName": "com.dominos.bd"
+    },
+    {
+      "packageName": "com.global.foodpanda.android",
+      "blockChannels": ["com.global.foodpanda.android_PROMOTIONS"]
+    },
+    {
+      "packageName": "com.aamra.kfc.bd.kfc_bd"
+    }
+  ]
+}

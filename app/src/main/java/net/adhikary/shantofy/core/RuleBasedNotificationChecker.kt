@@ -1,8 +1,10 @@
 package net.adhikary.shantofy.core
 
-class RuleBasedNotificationChecker : NotificationChecker {
+import android.content.Context
 
-    private val targetAppsProvider: TargetAppsProvider = TargetAppsProviderStatic()
+class RuleBasedNotificationChecker(context: Context) : NotificationChecker {
+
+    private val targetAppsProvider: TargetAppsProvider = TargetAppsProviderStatic(context)
     private val wordBlackList = listOf(
         "অফার",  "offer",
         "ডিসকাউন্ট",  "discount", "\bছাড়\b",

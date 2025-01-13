@@ -19,7 +19,7 @@ import net.adhikary.shantofy.core.ShantofyNotification
 
 class ShantofyNotificationListenerService : NotificationListenerService() {
 
-    private val ruleBasedNotificationChecker = RuleBasedNotificationChecker();
+    private val ruleBasedNotificationChecker by lazy { RuleBasedNotificationChecker(this) }
     private val enabledNotificationListeners = "enabled_notification_listeners"
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
