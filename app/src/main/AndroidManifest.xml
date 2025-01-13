@@ -8,6 +8,7 @@
         android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
         tools:ignore="SpecifyForegroundServiceType" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
         android:allowBackup="true"

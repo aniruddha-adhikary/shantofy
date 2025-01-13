@@ -69,6 +69,14 @@ class MainActivity : ComponentActivity() {
         checkNotificationPermission()
     }
 
+    fun openBatteryOptimizationSettings() {
+        val intent = Intent().apply {
+            action = Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
+            data = Uri.parse("package:$packageName")
+        }
+        startActivity(intent)
+    }
+
     private fun checkNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             when {

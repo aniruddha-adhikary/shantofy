@@ -99,9 +99,16 @@ fun MainScreen() {
                         title = stringResource(R.string.service_status),
                         isEnabled = status.value.isServiceRunning
                     )
+
+                    StatusItem(
+                        title = stringResource(R.string.battery_optimization_status),
+                        isEnabled = status.value.batteryOptimizationState == BatteryOptimizationState.DISABLED,
+                        showUnknown = status.value.batteryOptimizationState == BatteryOptimizationState.UNKNOWN
+                    )
                     
                     if (!status.value.isNotificationPermissionGranted || 
-                        !status.value.isNotificationListenerEnabled) {
+                        !status.value.isNotificationListenerEnabled ||
+                        status.value.batteryOptimizationState != BatteryOptimizationState.DISABLED) {
                         Text(
                             text = stringResource(R.string.status_help_message),
                             color = Color.White.copy(alpha = 0.7f),
@@ -151,7 +158,11 @@ fun MainScreen() {
 }
 
 @Composable
-fun StatusItem(title: String, isEnabled: Boolean) {
+fun StatusItem(
+    title: String, 
+    isEnabled: Boolean,
+    showUnknown: Boolean = false
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -165,7 +176,11 @@ fun StatusItem(title: String, isEnabled: Boolean) {
             fontSize = 16.sp
         )
         Text(
-            text = if (isEnabled) "✅" else "❌",
+            text = when {
+                showUnknown -> "❓"
+                isEnabled -> "✅"
+                else -> "❌"
+            },
             fontSize = 16.sp
         )
     }
