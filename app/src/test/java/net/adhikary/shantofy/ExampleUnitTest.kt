@@ -1,4 +1,4 @@
-package net.adhikary.shantofy
+package net.adhikary.thamen
 
 import org.junit.Test
 

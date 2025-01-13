@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'net.adhikary.shantofy'
+    namespace 'net.adhikary.thamen'
     compileSdk 35
 
     defaultConfig {
-        applicationId "net.adhikary.shantofy"
+        applicationId "net.adhikary.thamen"
         minSdk 26
         targetSdk 35
         versionCode 15
@@ -24,8 +24,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
     kotlinOptions {
         jvmTarget = '1.8'

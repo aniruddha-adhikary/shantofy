@@ -1,8 +1,8 @@
-# Shantofy
+# Thamen
 
-## What is Shantofy?
+## What is Thamen?
 
-Shantofy is an Android app that helps manage and filter notifications from specific apps. Its
+Thamen is an Android app that helps manage and filter notifications from specific apps. Its
 primary purpose is to keep certain apps running in the background by maintaining a persistent
 notification, while preventing those apps from showing their own notifications that might distract
 the user.
@@ -13,7 +13,7 @@ the user.
    intercept notifications from other apps.
 2. **Target Apps Filtering**: It specifically monitors notifications from a predefined list of
    target apps.
-3. **Background Operation**: Shantofy runs as a foreground service to ensure reliable operation and
+3. **Background Operation**: Thamen runs as a foreground service to ensure reliable operation and
    prevent system termination.
 4. **Permission Requirements**:
     - Notification Listener permission: Required to intercept notifications
@@ -24,7 +24,7 @@ the user.
 
 ### Core Components
 
-1. **ShantofyNotificationListenerService**
+1. **ThamenNotificationListenerService**
     - Main service that intercepts notifications
     - Implements Android's NotificationListenerService
     - Runs as a foreground service with a persistent notification
@@ -34,7 +34,7 @@ the user.
     - Uses rule-based system to determine which notifications to block
 
 3. **TargetAppsProvider**
-    - Manages the list of apps that Shantofy monitors
+    - Manages the list of apps that Thamen monitors
     - Currently uses a static list defined in TargetAppsProviderStatic
 
 ### Architecture

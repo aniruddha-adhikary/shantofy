@@ -1,4 +1,4 @@
-package net.adhikary.shantofy.core
+package net.adhikary.thamen.core
 
 data class TargetApp(
     val packageName: String,

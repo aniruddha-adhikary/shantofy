@@ -1,9 +1,9 @@
-package net.adhikary.shantofy.dirty
+package net.adhikary.thamen.dirty
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import net.adhikary.shantofy.ShantofyNotificationListenerService
+import net.adhikary.thamen.ShantofyNotificationListenerService
 
 class BootBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

@@ -1,4 +1,4 @@
-package net.adhikary.shantofy
+package net.adhikary.thamen
 
 import android.Manifest
 import android.content.pm.ActivityInfo
@@ -15,7 +15,8 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
-import net.adhikary.shantofy.ui.MainScreen
+import net.adhikary.thamen.R
+import net.adhikary.thamen.ui.MainScreen
 
 class MainActivity : ComponentActivity() {
     private val enabledNotificationListeners = "enabled_notification_listeners"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shantofy</string>
+    <string name="app_name">Thamen</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -9,19 +9,19 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="service_label">"Shantofy Filtering Service"</string>
-    <string name="notification_listener_service">"Shantofy Notification Filter"</string>
+    <string name="service_label">"Thamen Filtering Service"</string>
+    <string name="notification_listener_service">"Thamen Notification Filter"</string>
     <string name="notification_listener_service_explanation">"For the app to filter notifications, you need to enable the Notification Listener Service. Enable it now?"</string>
     <string name="notification_listener_service_content">"Blocking annoying notifications! %1$d blocked."</string>
-    <string name="notification_listener_service_not_ready">"🚨 Shantofy is not yet blocking annoying notifications. You may need to grant permissions."</string>
+    <string name="notification_listener_service_not_ready">"🚨 Thamen is not yet blocking annoying notifications. You may need to grant permissions."</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="preference_key">"net.adhikary.shantofy_preferences"</string>
+    <string name="preference_key">"net.adhikary.thamen_preferences"</string>
     <string name="block_count_key">"blockedCount"</string>
-    <string name="notification_channel_id">shantofy_foreground_task_runner</string>
-    <string name="notification_channel_human">Shantofy Foreground Service</string>
-    <string name="welcome_message">Just ensure the Shantofy Notification is up on your Notification Center!</string>
+    <string name="notification_channel_id">thamen_foreground_task_runner</string>
+    <string name="notification_channel_human">Thamen Foreground Service</string>
+    <string name="welcome_message">Just ensure the Thamen Notification is up on your Notification Center!</string>
     <string name="credits_message">Created by Ani Adhikary, and contributors</string>
-    <string name="notification_permission_rationale">Shantofy needs notification permission to work properly. Would you like to grant it?</string>
+    <string name="notification_permission_rationale">Thamen needs notification permission to work properly. Would you like to grant it?</string>
     <string name="notification_permission_title">Notification Permission Required</string>
 </resources>

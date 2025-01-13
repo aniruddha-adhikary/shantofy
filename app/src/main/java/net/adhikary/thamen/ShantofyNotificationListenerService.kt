@@ -1,4 +1,4 @@
-package net.adhikary.shantofy
+package net.adhikary.thamen
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -14,8 +14,9 @@ import android.service.notification.NotificationListenerService
 import android.service.notification.StatusBarNotification
 import android.text.TextUtils
 import android.util.Log
-import net.adhikary.shantofy.core.RuleBasedNotificationChecker
-import net.adhikary.shantofy.core.ShantofyNotification
+import net.adhikary.thamen.R
+import net.adhikary.thamen.core.RuleBasedNotificationChecker
+import net.adhikary.thamen.core.ShantofyNotification
 
 class ShantofyNotificationListenerService : NotificationListenerService() {
 

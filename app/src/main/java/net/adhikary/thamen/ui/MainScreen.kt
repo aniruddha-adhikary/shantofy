@@ -1,4 +1,4 @@
-package net.adhikary.shantofy.ui
+package net.adhikary.thamen.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -25,7 +25,7 @@ import android.net.Uri
 import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import net.adhikary.shantofy.R
+import net.adhikary.thamen.R
 
 @Composable
 fun MainScreen() {
@@ -46,14 +46,6 @@ fun MainScreen() {
                 .fillMaxWidth()
                 .padding(imagePadding)
         ) {
-            // Image at the top
-            Image(
-                painter = painterResource(id = R.drawable.ic_shantofy_logo),
-                contentDescription = "Logo",
-                modifier = Modifier
-                    .size(width = 233.dp, height = 240.dp)
-            )
-
             // Scrollable Text in the middle
             Box(
                 modifier = Modifier

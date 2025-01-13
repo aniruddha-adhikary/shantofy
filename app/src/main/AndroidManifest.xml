@@ -15,11 +15,10 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="net.adhikary.thamen.MainActivity"
             android:exported="true"
             android:configChanges="orientation|screenSize">
             <intent-filter>
@@ -34,7 +33,7 @@
         </activity>
 
         <service
-            android:name=".ShantofyNotificationListenerService"
+            android:name="net.adhikary.thamen.ShantofyNotificationListenerService"
             android:exported="true"
             android:label="@string/service_label"
             android:foregroundServiceType="specialUse"
@@ -48,7 +47,7 @@
         </service>
 
         <receiver
-            android:name=".dirty.BootBroadcastReceiver"
+            android:name="net.adhikary.thamen.dirty.BootBroadcastReceiver"
             android:exported="true">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
