@@ -3,6 +3,7 @@ package net.adhikary.thamen.dirty
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import androidx.core.content.ContextCompat
 import net.adhikary.thamen.ShantofyNotificationListenerService
 
 class BootBroadcastReceiver : BroadcastReceiver() {
@@ -10,7 +11,7 @@ class BootBroadcastReceiver : BroadcastReceiver() {
         // credits: https://stackoverflow.com/questions/11168869/starting-background-service-when-android-turns-on
         if (validActions.contains(intent.action)) {
             val serviceIntent = Intent(context, ShantofyNotificationListenerService::class.java)
-            context.startService(serviceIntent)
+            ContextCompat.startForegroundService(context, serviceIntent)
         }
     }
 

@@ -26,7 +26,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         registerNotificationChannel()
         val notification = createNotification()
-        startForeground(NOTIFICATION_CHANNEL_ID, notification)
+        startForeground(NOTIFICATION_ID, notification)
         return START_NOT_STICKY
     }
 
@@ -51,7 +51,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
 
     private fun registerNotificationChannel() {
         val channel = NotificationChannel(
-            getString(R.string.notification_channel_id),
+            NOTIFICATION_CHANNEL_ID,
             getString(R.string.notification_channel_human),
             NotificationManager.IMPORTANCE_DEFAULT
         )
@@ -72,6 +72,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
         }
         return content
             .setContentIntent(pendingIntent)
+            .setOngoing(true)
             .build()
     }
 
@@ -79,17 +80,17 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
         val notification = buildNotificationContent(count).build()
 
         val mNotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
-        mNotificationManager.notify(NOTIFICATION_CHANNEL_ID, notification);
+        mNotificationManager.notify(NOTIFICATION_ID, notification);
     }
 
     private fun buildNotReadyContent() =
-        Notification.Builder(this, getString(R.string.notification_channel_id))
+        Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setContentTitle(getString(R.string.notification_listener_service))
             .setContentText(getString(R.string.notification_listener_service_not_ready))
             .setSmallIcon(R.drawable.ic_notification_icon)
 
     private fun buildNotificationContent(count: Int) =
-        Notification.Builder(this, getString(R.string.notification_channel_id))
+        Notification.Builder(this, NOTIFICATION_CHANNEL_ID)
             .setContentTitle(getString(R.string.notification_listener_service))
             .setContentText(getString(R.string.notification_listener_service_content, count))
             .setSmallIcon(R.drawable.ic_notification_icon)
@@ -129,6 +130,7 @@ class ShantofyNotificationListenerService : NotificationListenerService() {
     }
 
     companion object {
-        private const val NOTIFICATION_CHANNEL_ID = 1
+        private const val NOTIFICATION_CHANNEL_ID = "thamen_foreground_task_runner"
+        private const val NOTIFICATION_ID = 1
     }
 }

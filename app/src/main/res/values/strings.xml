@@ -20,7 +20,11 @@
     <string name="block_count_key">"blockedCount"</string>
     <string name="notification_channel_id">thamen_foreground_task_runner</string>
     <string name="notification_channel_human">Thamen Foreground Service</string>
-    <string name="welcome_message">Just ensure the Thamen Notification is up on your Notification Center!</string>
+    <string name="status_title">App Status</string>
+    <string name="notification_permission_status">Notification Permission</string>
+    <string name="notification_listener_status">Notification Listener Access</string>
+    <string name="service_status">Service Running</string>
+    <string name="status_help_message">⚠️ Some permissions are missing. Please check your system settings to enable all required permissions for the app to work properly.</string>
     <string name="credits_message">Created by Ani Adhikary, and contributors</string>
     <string name="notification_permission_rationale">Thamen needs notification permission to work properly. Would you like to grant it?</string>
     <string name="notification_permission_title">Notification Permission Required</string>

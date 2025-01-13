@@ -1,10 +1,10 @@
 package net.adhikary.thamen
 
 import android.Manifest
-import android.content.pm.ActivityInfo
 import android.app.AlertDialog
 import android.content.ComponentName
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
@@ -14,8 +14,18 @@ import android.text.TextUtils
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.content.ContextCompat
-import net.adhikary.thamen.R
 import net.adhikary.thamen.ui.MainScreen
 
 class MainActivity : ComponentActivity() {
@@ -30,6 +40,16 @@ class MainActivity : ComponentActivity() {
         if (isGranted) {
             // Permission granted, proceed with notification listener setup
             setupNotificationListener()
+            if (isNotificationServiceEnabled()) {
+                startService()
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (isNotificationServiceEnabled()) {
+            startService()
         }
     }
 
@@ -90,7 +110,6 @@ class MainActivity : ComponentActivity() {
             enableNotificationListenerAlertDialog = buildNotificationServiceAlertDialog()
             enableNotificationListenerAlertDialog?.show()
         }
-        startService()
     }
 
     private fun startService() {
@@ -114,6 +133,30 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+
+        @Composable
+        fun StatusItem(
+            title: String,
+            isEnabled: Boolean
+        ) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(vertical = 4.dp),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = title,
+                    color = Color.White,
+                    fontSize = 16.sp
+                )
+                Text(
+                    text = if (isEnabled) "✅" else "❌",
+                    fontSize = 16.sp
+                )
+            }
+        }
         return false
     }
 
@@ -123,7 +166,15 @@ class MainActivity : ComponentActivity() {
         alertDialogBuilder.setMessage(R.string.notification_listener_service_explanation)
         alertDialogBuilder.setPositiveButton(
             R.string.yes
-        ) { dialog, id -> startActivity(Intent(ACTION_NOTIFICATION_LISTENER_SETTINGS)) }
+        ) { dialog, id -> 
+            startActivity(Intent(ACTION_NOTIFICATION_LISTENER_SETTINGS))
+            // Check and start service after a delay to allow user to enable the service
+            android.os.Handler(mainLooper).postDelayed({
+                if (isNotificationServiceEnabled()) {
+                    startService()
+                }
+            }, 1000)
+        }
         alertDialogBuilder.setNegativeButton(
             R.string.no
         ) { dialog, id ->
