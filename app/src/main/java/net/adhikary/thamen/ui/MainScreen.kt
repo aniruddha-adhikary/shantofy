@@ -2,34 +2,44 @@ package net.adhikary.thamen.ui
 
 import android.content.Intent
 import android.net.Uri
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.LaunchedEffect
-import kotlinx.coroutines.delay
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.delay
 import net.adhikary.thamen.R
 
 @Composable
 fun MainScreen() {
     val context = LocalContext.current
-    val backgroundColor = Color(0xFF1E1E1E)  // Dark background
-    val accentColor = Color(0xFF6200EE)      // Primary purple accent
+    val backgroundColor = Color(0xFF1A1A1A)  // Dark background
+    val accentColor = Color(0xFFFF5722)      // Orange accent matching logo
+    val gradientAccent = Color(0xFFFF8A65)   // Lighter orange for gradient effects
 
     Box(
         modifier = Modifier
@@ -50,7 +60,7 @@ fun MainScreen() {
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
                     .padding(bottom = 24.dp)
-                    .padding(top = 16.dp),
+                    .padding(top = 24.dp),
             )
 
             // Status Card
@@ -70,7 +80,7 @@ fun MainScreen() {
                     .fillMaxWidth()
                     .weight(1f)
                     .clip(RoundedCornerShape(16.dp)),
-                color = accentColor.copy(alpha = 0.08f)
+                color = accentColor.copy(alpha = 0.12f)
             ) {
                 Column(
                     modifier = Modifier
